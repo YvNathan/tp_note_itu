@@ -25,7 +25,7 @@
 
 ---
 
-## 📊 Affichage des notes d'un étudiant
+##  Affichage des notes d'un étudiant
 Quand on clique sur un étudiant, afficher ses notes avec les onglets suivants :
 
 - [ ] Onglet **S3** — notes du semestre 3
