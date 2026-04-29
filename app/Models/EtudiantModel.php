@@ -17,4 +17,14 @@ class EtudiantModel extends Model
         'date_naissance',
         'lieu_naissance',
     ];
+
+    protected $validationRules = [
+        'nom'            => 'required|max_length[100]',
+        'prenoms'        => 'required|max_length[150]',
+        'date_naissance' => 'required|valid_date',
+        'lieu_naissance' => 'required|max_length[150]',
+    ];
+
+    protected $skipValidation = false;
+    protected $cleanValidationRules = true;
 }

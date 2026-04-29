@@ -16,4 +16,12 @@ class ParcoursModel extends Model
         'responsable',
     ];
 
+    protected $validationRules = [
+        'nom'         => 'required|max_length[100]',
+        'responsable' => 'required|max_length[150]',
+    ];
+
+    protected $skipValidation = false;
+    protected $cleanValidationRules = true;
+
 }

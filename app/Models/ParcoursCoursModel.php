@@ -17,4 +17,14 @@ class ParcoursCoursModel extends Model
         'est_optionnel',
         'groupe_option',
     ];
+
+    protected $validationRules = [
+        'parcours_id'   => 'required|is_natural_no_zero',
+        'cours_id'      => 'required|is_natural_no_zero',
+        'est_optionnel' => 'permit_empty|in_list[0,1]',
+        'groupe_option' => 'permit_empty|max_length[50]',
+    ];
+
+    protected $skipValidation = false;
+    protected $cleanValidationRules = true;
 }

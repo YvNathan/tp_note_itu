@@ -51,3 +51,10 @@ CREATE TABLE notes (
     FOREIGN KEY (inscription_id) REFERENCES inscriptions (id),
     FOREIGN KEY (cours_id) REFERENCES cours(id)
 );
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+INSERT INTO users (username, password) VALUES ('admin', 'admin123');

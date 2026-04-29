@@ -4,25 +4,21 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CoursModel extends Model
+class UserModel extends Model
 {
-    protected $table = 'cours';
+    protected $table = 'users';
     protected $primaryKey = 'id';
     protected $returnType = 'array';
     protected $useAutoIncrement = true;
     protected $protectFields = true;
     protected $allowedFields = [
-        'code_ue',
-        'intitule',
-        'credits',
-        'semestre',
+        'username',
+        'password',
     ];
 
     protected $validationRules = [
-        'code_ue'  => 'required|max_length[10]',
-        'intitule' => 'required|max_length[150]',
-        'credits'  => 'required|integer|greater_than[0]',
-        'semestre' => 'required|integer|greater_than[0]',
+        'username' => 'required|max_length[50]|is_unique[users.username,id,{id}]',
+        'password' => 'required|min_length[6]|max_length[255]',
     ];
 
     protected $skipValidation = false;
