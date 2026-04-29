@@ -135,12 +135,12 @@ INSERT INTO etudiants (nom, prenoms, date_naissance, lieu_naissance) VALUES
 -- ------------------------------------------------------------
 -- 5. INSCRIPTIONS (L2, année 2024-2025)
 -- ------------------------------------------------------------
-INSERT INTO inscriptions (etudiant_id, parcours_id, niveau, annee_universitaire, matricule) VALUES
-(1, 1, 'L2', '2024-2025', 'ETU004040'),
-(2, 2, 'L2', '2024-2025', 'ETU004041'),
-(3, 3, 'L2', '2024-2025', 'ETU004042'),
-(4, 1, 'L2', '2024-2025', 'ETU004043'),
-(5, 2, 'L2', '2024-2025', 'ETU004044');
+INSERT INTO inscriptions (etudiant_id, niveau, annee_universitaire, matricule) VALUES
+(1, 'L2', '2024-2025', 'ETU004040'),
+(2, 'L2', '2024-2025', 'ETU004041'),
+(3, 'L2', '2024-2025', 'ETU004042'),
+(4, 'L2', '2024-2025', 'ETU004043'),
+(5, 'L2', '2024-2025', 'ETU004044');
 
 
 -- ------------------------------------------------------------

@@ -17,10 +17,6 @@ class CreateInscriptionsTable extends Migration
                 'type' => 'INT',
                 'null' => false,
             ],
-            'parcours_id' => [
-                'type' => 'INT',
-                'null' => false,
-            ],
             'niveau' => [
                 'type'       => 'ENUM',
                 'constraint' => ['L1', 'L2', 'L3', 'M1', 'M2'],
@@ -40,7 +36,6 @@ class CreateInscriptionsTable extends Migration
         ]);
         $this->forge->addKey('id', false, true);
         $this->forge->addForeignKey('etudiant_id', 'etudiants', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('parcours_id', 'parcours', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('inscriptions');
     }
 

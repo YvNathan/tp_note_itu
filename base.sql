@@ -15,12 +15,10 @@ CREATE TABLE parcours (
 CREATE TABLE inscriptions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     etudiant_id INT NOT NULL,
-    parcours_id INT NOT NULL,
     niveau ENUM('L1', 'L2', 'L3', 'M1', 'M2') NOT NULL,
     annee_universitaire VARCHAR(10) NOT NULL,
     matricule VARCHAR(30) UNIQUE NOT NULL,
-    FOREIGN KEY (etudiant_id) REFERENCES etudiants(id),
-    FOREIGN KEY (parcours_id) REFERENCES parcours(id)
+    FOREIGN KEY (etudiant_id) REFERENCES etudiants(id)
 );
 
 CREATE TABLE cours (
@@ -47,7 +45,7 @@ CREATE TABLE notes (
     cours_id INT NOT NULL,
     note DECIMAL(4, 2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT NULL,
     FOREIGN KEY (inscription_id) REFERENCES inscriptions (id),
     FOREIGN KEY (cours_id) REFERENCES cours(id)
 );

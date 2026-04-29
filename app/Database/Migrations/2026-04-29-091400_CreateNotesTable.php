@@ -34,7 +34,7 @@ class CreateNotesTable extends Migration
             'updated_at' => [
                 'type'    => 'TIMESTAMP',
                 'null'    => true,
-                'default' => new RawSql('NULL ON UPDATE CURRENT_TIMESTAMP'),
+                'default' => new RawSql('NULL'),
             ],
         ]);
         $this->forge->addKey('id', false, true);

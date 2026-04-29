@@ -26,7 +26,21 @@ class NoteModel extends Model
     protected $skipValidation = false;
     protected $cleanValidationRules = true;
 
-    protected $useTimestamps = true;
-    protected $createdField = 'created_at';
-    protected $updatedField = 'updated_at';
+    protected $useTimestamps = false;
+    protected $beforeInsert = ['stampCreatedAt'];
+    protected $beforeUpdate = ['stampUpdatedAt'];
+
+    protected function stampCreatedAt(array $data): array
+    {
+        $data['data']['created_at'] = date('Y-m-d H:i:s');
+
+        return $data;
+    }
+
+    protected function stampUpdatedAt(array $data): array
+    {
+        $data['data']['updated_at'] = date('Y-m-d H:i:s');
+
+        return $data;
+    }
 }
