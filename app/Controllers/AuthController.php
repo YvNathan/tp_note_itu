@@ -9,7 +9,7 @@ class AuthController extends BaseController
     {
         // Si déjà connecté → rediriger
         if (session()->get('user_id')) {
-            return redirect()->to('/etudiants');
+            return redirect()->to(site_url('etudiants'));
         }
         return view('template/login');
     }
@@ -63,12 +63,12 @@ class AuthController extends BaseController
             'user_role'  => $user['role'],
         ]);
 
-        return redirect()->to('/etudiants')->with('success', 'Connexion réussie');
+        return redirect()->to(site_url('etudiants'))->with('success', 'Connexion réussie');
     }
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to(site_url('login'));
     }
 }

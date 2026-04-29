@@ -24,8 +24,8 @@
     <h2>Connexion</h2>
     <p class="subtitle">Connectez-vous à votre espace de travail</p>
 
-   <form action="<?= site_url('/login') ?>" method="POST">
-    <?= csrf_field() ?>
+    <form action="<?= site_url('login') ?>" method="POST">
+      <?= csrf_field() ?>
 
     <div class="field-group">
         <label>Adresse e-mail</label>

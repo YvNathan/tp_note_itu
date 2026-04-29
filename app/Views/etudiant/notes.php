@@ -9,32 +9,8 @@
 </head>
 <body>
 <div class="app">
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
-      <div>
-        <div class="brand-name">SysInfo</div>
-        <div class="brand-sub">v2.4.0</div>
-      </div>
-    </div>
-
-    <div class="sidebar-section">Navigation</div>
-    <a href="<?= site_url('dashboard') ?>" class="nav-item">Tableau de bord</a>
-    <a href="<?= site_url('list') ?>" class="nav-item active">Etudiants</a>
-    <a href="<?= site_url('form') ?>" class="nav-item">Formulaire</a>
-
-    <div class="sidebar-bottom">
-      <a href="<?= site_url('login') ?>" class="user-row">
-        <div class="avatar">AD</div>
-        <div class="user-info">
-          <div class="name">Admin Sys</div>
-          <div class="role">Super administrateur</div>
-        </div>
-      </a>
-    </div>
-  </aside>
+  <?= view('partials/header') ?>
+  <?= view('partials/sidebar') ?>
 
   <div class="main">
     <div class="topbar">
