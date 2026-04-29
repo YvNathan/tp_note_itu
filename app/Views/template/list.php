@@ -38,32 +38,6 @@
       Formulaire
     </a>
 
-    <div class="sidebar-section">Modules</div>
-
-    <a href="#" class="nav-item">
-      <svg viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
-      Catalogue
-    </a>
-    <a href="#" class="nav-item">
-      <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-      Comptabilité
-    </a>
-    <a href="#" class="nav-item">
-      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      RH
-    </a>
-    <a href="#" class="nav-item">
-      <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      Rapports
-    </a>
-
-    <div class="sidebar-section">Système</div>
-
-    <a href="#" class="nav-item">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-      Paramètres
-    </a>
-
     <div class="sidebar-bottom">
       <a href="<?= site_url('login') ?>" class="user-row">
         <div class="avatar">AD</div>
@@ -180,7 +154,7 @@
                   <td><span class="badge badge-green">Actif</span></td>
                   <td>
                     <div class="td-actions">
-                      <a href="<?= site_url('etudiant/notes/' . $etudiant['id']) ?>" class="action-btn" title="Voir details">
+                      <a href="<?= site_url('etudiants/' . $etudiant['id'] . '/notes') ?>" class="action-btn" title="Voir details">
                         <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                       </a>
                     </div>
