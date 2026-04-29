@@ -3,6 +3,7 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use CodeIgniter\Database\RawSql;
 
 class CreateNotesTable extends Migration
 {
@@ -26,9 +27,14 @@ class CreateNotesTable extends Migration
                 'constraint' => '4,2',
                 'null'       => false,
             ],
-            'date_saisie' => [
+            'created_at' => [
                 'type'    => 'TIMESTAMP',
-                'default' => new \CodeIgniter\Database\RawSql('CURRENT_TIMESTAMP'),
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
+            ],
+            'updated_at' => [
+                'type'    => 'TIMESTAMP',
+                'null'    => true,
+                'default' => new RawSql('NULL ON UPDATE CURRENT_TIMESTAMP'),
             ],
         ]);
         $this->forge->addKey('id', false, true);

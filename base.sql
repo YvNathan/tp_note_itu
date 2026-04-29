@@ -46,7 +46,8 @@ CREATE TABLE notes (
     inscription_id INT NOT NULL,
     cours_id INT NOT NULL,
     note DECIMAL(4, 2) NOT NULL,
-    date_saisie TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (inscription_id) REFERENCES inscriptions (id),
     FOREIGN KEY (cours_id) REFERENCES cours(id)
 );
