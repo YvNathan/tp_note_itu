@@ -54,7 +54,13 @@ CREATE TABLE notes (
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(255) NOT NULL
+    nom VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    mot_de_passe VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'enseignant') DEFAULT 'enseignant'
 );
-INSERT INTO users (username, password) VALUES ('admin', 'admin123');
+
+INSERT INTO users (nom, email, mot_de_passe, role)
+VALUES ('Admin', 'admin@admin.com', '$2y$10$tyAhX2BUtp3zJytVAvRiAe5jz99.2aT1bQptZPJlcEND/QnNVsZQ6', 'admin');
+-- mot de passe en clair : admin123
+
