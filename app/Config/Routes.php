@@ -9,5 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
 $routes->get('/dashboard', 'Home::dashboard');
-$routes->get('/list', 'Home::list');
+$routes->get('/list', 'Etudiant::index');
 $routes->get('/form', 'Home::form');
+$routes->get('/etudiants', 'Etudiant::index');
+$routes->get('/etudiant/notes/(:num)', 'Etudiant::notes/$1');
